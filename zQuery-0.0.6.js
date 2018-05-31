@@ -36,6 +36,11 @@
           return this
         }
       }
+      // 判断是否是数组
+      else if (tools.isArray(selector)) {
+        [].push.apply(this,selector);
+        return this
+      }
     }
   };
   // 03 设置init的原型对象为jQuery
@@ -72,6 +77,21 @@
         return string.trim()
       } else {
         return string.replace(/^\s+|\s+$/g,'')
+      }
+    },
+    /**
+     * 判断是否是数组
+     * @param array
+     * @returns {*}
+     */
+    isArray : function (array) {
+      // 判断是否支持isarray方法
+      if (array.isArray) {
+        return array.isArray()
+      }
+      // 兼容性处理
+      else {
+        return Object.prototype.toString.call(array) === '[object Array]'
       }
     }
   }

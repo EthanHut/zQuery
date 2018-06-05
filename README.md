@@ -14,4 +14,4 @@ zQuery0.0.8 对象|数组|DOM标签作为参数的处理<br>
 zQuery0.0.9 传递伪数组的兼容性处理<br>
 zQuery0.1.0 传递函数的处理<br>
 zQuery0.1.1 jQuery工具方法处理<br>
-zQuery0.1.2 ready方法实现,jQuery扩展方法的处理<br>
+zQuery0.1.2 ready方法实现,jQuery插件机制extend<br>

@@ -4,10 +4,30 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <!--<script src="../jquery.js"></script>-->
-    <script src="../zQuery-0.1.1.js"></script>
+    <script src="../zQuery-0.1.2.js"></script>
     <script>
-      var str = '1';
-      console.log($.isString(str));
+      $().ready(function () {
+        var str = '1';
+        var likeArr = {
+          0: '1',
+          1: '2',
+          2: '3',
+          length: 3
+        };
+        var obj = {'haha': 'hahhshd'};
+        var dom = document.getElementsByClassName('class1');
+//        console.log($.isString(str)); // true
+        console.log($(''));//init 空实例对象
+        console.log($('<div>hhahah</div>'));// init实例对象 有div
+        console.log($('  <div>hhahah</div>  '));// init实例对象 有div
+        console.log($('#id1'));//init 实例对象 标签内容为id
+        console.log($('.class1'));//init实例对象 标签内容为class
+        console.log($([1, 2, 3]));// init 实例对象 内容是 1 2 3
+        console.log($(likeArr)); // init 实例对象 内容为伪数组的内容
+        console.log($(obj)); // init 实例对象 只有一个key value为传递的值
+        console.log($(1)); // 同上
+        console.log($(dom)); // 同上
+      })
     </script>
 </head>
 <body>

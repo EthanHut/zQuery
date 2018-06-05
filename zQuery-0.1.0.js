@@ -22,7 +22,7 @@
         // 判断是否是标签
         if (tools.isHTML(selector)) {
           var oDiv = document.createElement('div').innerHTML = selector;
-          [].push.apply(this,selector);
+          [].push.apply(this,oDiv.children);
           return this
         }
         // 不是标签则是选择器
@@ -114,7 +114,7 @@
        * ##拥有length-1属性
        * ##不是window对象,因为winodw对象也拥有length属性
        */
-      return typeof likeArray === 'object' && ('length' in likeArray) && ('length' - 1 in likeArray) && likeArray !== window.window
+      return typeof likeArray === 'object' && ('length' in likeArray) && (likeArray.length - 1 in likeArray) && likeArray !== window.window
     },
     /**
      * 判断是否是函数

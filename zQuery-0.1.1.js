@@ -13,16 +13,16 @@
         return this
       }
       // 1 判断是否传递函数
-      else if (tools.isFunction(selector)) {
+      else if (jQuery.isFunction(selector)) {
         // 监听DOM
-        tools.DOMCompleteListener(selector)
+        jQuery.DOMCompleteListener(selector)
       }
       // 2 判断类型是否是字符串
-      else if (tools.isString(selector)) {
+      else if (jQuery.isString(selector)) {
         // 判断是否是标签
-        if (tools.isHTML(selector)) {
+        if (jQuery.isHTML(selector)) {
           var oDiv = document.createElement('div').innerHTML = selector;
-          [].push.apply(this,selector);
+          [].push.apply(this,oDiv.children);
           return this
         }
         // 不是标签则是选择器
@@ -33,12 +33,12 @@
         }
       }
       // 3 判断类型是否是数组
-      else if (tools.isArray(selector)) {
+      else if (jQuery.isArray(selector)) {
         [].push.apply(this,selector);
         return this
       }
       // 4 判断是伪数组
-      else if (tools.isLikeArray(selector)) {
+      else if (jQuery.isLikeArray(selector)) {
         // aplly方法只能接收数组或者系统原有的伪数组,不能接收自定义的伪数组,否则会在IE9以下出现兼容问题
         // 兼容思路: 将自定义的伪数组转换成数组
         var arr = [].slice.apply(selector);
@@ -77,7 +77,7 @@
      * 判断是否是标签元素
      */
     isHTML : function (string) {
-      var str = tools.trim(string);
+      var str = jQuery.trim(string);
       return str.charAt(0) === '<' && str.charAt(str.length - 1) === '>' && str.length >= 3
     },
     /**
@@ -119,7 +119,7 @@
        * ##拥有length-1属性
        * ##不是window对象,因为winodw对象也拥有length属性
        */
-      return typeof likeArray === 'object' && ('length' in likeArray) && ('length' - 1 in likeArray) && likeArray !== window.window
+      return typeof likeArray === 'object' && ('length' in likeArray) && (likeArray.length - 1 in likeArray) && likeArray !== window.window
     },
     /**
      * 判断是否是函数
@@ -130,7 +130,7 @@
       return typeof fn === 'function'
     },
     /**
-     *
+     * 监听DOM加载
      * @param callBack
      * @constructor
      */

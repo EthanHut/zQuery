@@ -26,7 +26,7 @@
         // 判断是否是标签元素
         if (tools.isHTML(selector)) {
           var oDiv = document.createElement('div').innerHTML = selector;
-          [].push.apply(this,oDiv);
+          [].push.apply(this,oDiv.children);
           return this
         }
         // 不是标签就是选择器

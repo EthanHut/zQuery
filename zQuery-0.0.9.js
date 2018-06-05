@@ -17,7 +17,7 @@
         // 判断是否是标签
         if (tools.isHTML(selector)) {
           var oDiv = document.createElement('div').innerHTML = selector;
-          [].push.apply(this,selector);
+          [].push.apply(this,oDiv.children);
           return this
         }
         // 不是标签则是选择器
@@ -36,6 +36,7 @@
       else if (tools.isLikeArray(selector)) {
         // aplly方法只能接收数组或者系统原有的伪数组,不能接收自定义的伪数组,否则会在IE9以下出现兼容问题
         // 兼容思路: 将自定义的伪数组转换成数组
+        console.log(1);
         var arr = [].slice.apply(selector);
         [].push.apply(this,arr);
         return this
@@ -109,7 +110,7 @@
        * ##拥有length-1属性
        * ##不是window对象,因为winodw对象也拥有length属性
        */
-      return typeof likeArray === 'object' && ('length' in likeArray) && ('length' - 1 in likeArray) && likeArray !== window.window
+      return typeof likeArray === 'object' && ('length' in likeArray) && (likeArray.length - 1 in likeArray) && likeArray !== window.window
     }
   }
 })(window)

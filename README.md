@@ -18,3 +18,4 @@ zQuery0.1.2 ready方法实现,jQuery插件机制extend<br>
 zQuery0.1.3 新增原型属性:length,selector,jQuery,和原型方法toArray<br>
 zQuery0.1.4 新增原型方法get<br>
 zQuery0.1.5 新增原型方法eq<br>
+zQuery0.1.6 新增原型方法first,last,push,sort,splice<br>

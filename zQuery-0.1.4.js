@@ -181,6 +181,30 @@
      */
     toArray: function () {
       return [].slice.call(this);
+    },
+    /**
+     * 用来获取实例对象对应索引的DOM对象
+     * @param index
+     * @returns {*}
+     */
+    get: function (index) {
+      /**
+       * get方法接收一个索引,
+       * 如果不传,则返回实例对象转换成的数组结构
+       * 如果传递为正数,则返回实例对象对应的索引DOM对象
+       * 如果传递的负数,则返回实例对象倒数第N个DOM对象
+       */
+      if (arguments.length === 0) {
+        return this.toArray()
+      }
+      else {
+        if (index >= 0) {
+          return this[index]
+        }
+        else {
+          return this[this.length + index]
+        }
+      }
     }
   });
 })(window);

@@ -15,3 +15,4 @@ zQuery0.0.9 传递伪数组的兼容性处理<br>
 zQuery0.1.0 传递函数的处理<br>
 zQuery0.1.1 jQuery工具方法处理<br>
 zQuery0.1.2 ready方法实现,jQuery插件机制extend<br>
+zQuery0.1.3 新增原型属性:length,selector,jQuery,和原型方法toArray<br>

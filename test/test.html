@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <!--<script src="../jquery.js"></script>-->
-    <script src="../zQuery-0.1.2.js"></script>
+    <script src="../zQuery-0.1.5.js"></script>
     <script>
       $().ready(function () {
         var str = '1';
@@ -27,6 +27,8 @@
         console.log($(obj)); // init 实例对象 只有一个key value为传递的值
         console.log($(1)); // 同上
         console.log($(dom)); // 同上
+        console.log($('div').get(1)); // 同上
+        console.log($('div').eq(1)); // 同上
       })
     </script>
 </head>
